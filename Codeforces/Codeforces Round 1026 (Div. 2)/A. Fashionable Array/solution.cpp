@@ -1,4 +1,4 @@
-// link  - A. Fashionable Array
+// link  - https://codeforces.com/contest/2110/problem/A
 
 
 #include<bits/stdc++.h>
@@ -7,7 +7,7 @@ using namespace std;
 #define ll long long
 #define pb push_back
 
-void solve(int ci){
+void solve(){
     // cout<<ci<<"  -  ";
     int n,i,j,c1,c2,mn=51;
     cin>>n;
