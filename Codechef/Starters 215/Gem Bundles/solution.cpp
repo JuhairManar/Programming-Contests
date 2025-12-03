@@ -1,4 +1,5 @@
-// link - https://www.codechef.com/problems/GEMBUND
+// link - https://www.codechef.com/problems/SPMISS
+
 
 #pragma GCC optimize("Ofast")
 #include<bits/stdc++.h>
@@ -14,31 +15,20 @@ using namespace std;
 template<typename T> using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 void solve(){
-   ll n,i,k,sm=0,s1=0;
-   cin>>n>>k;
-   vector<ll>v(n),sp;
-   for(auto &g:v) cin>>g;
-   string s;
-   cin>>s;
+   ll n,i,a,b,c,mn,s=0;
+   cin>>a>>b>>c;
+   
+   mn=min({a,b,c});
 
-   for(i=0;i<n;i++){
-    if(s[i]=='0') sm+=v[i];
-    else {
-        sp.pb(v[i]);
-        s1+=v[i];
-    }
-   } 
+   s+=(mn*10);
+   a=max(0LL,a-mn);
+   b=max(0LL,b-mn);
+   c=max(0LL,c-mn);
 
-   sort(sp.rbegin(),sp.rend());
-   if(sp.size()==0 || s1<k || sm<k){
-    cout<<sm<<"\n";
-    return ;
-   }
-   sm+=(sp[0]-k);
+   s+=((a+b+c)*3);
 
-   for(i=1;i<sp.size();i++) sm+=sp[i];
-
-   cout<<sm<<"\n";
+   cout<<s<<"\n";
+    
 }
 
 int main()
